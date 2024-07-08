@@ -82,7 +82,7 @@ def create_user_profie(sender, instance, created, **kwargs):
         EmployeeProfile.objects.create(user=instance)
 
 class EmployeeProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE) #Since we're using on_delete=models.CASCADE
+    user = models.OneToOneField(User, on_delete=models.CASCADE) #Since we're using on_delete=models.CASCADE, whenever athe user related to this entry is eliminated the Profile table with update as well
     employee_id = models.IntegerField(null=True, blank=True)
 
 
